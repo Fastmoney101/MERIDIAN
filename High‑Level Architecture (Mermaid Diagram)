@@ -1,0 +1,22 @@
+flowchart TD
+
+A[Command Center] --> B[Liquidity Engine]
+A --> C[Federation Layer]
+A --> D[Identity Layer]
+A --> E[Simulation Engine]
+A --> F[Exchange]
+
+B --> F
+E --> F
+E --> G[Atlas II]
+F --> G
+C --> G
+D --> G
+G --> H[Continuity Engine]
+H --> A
+
+subgraph Ritual Layer
+I[Ritual Console]
+end
+
+G --> I
