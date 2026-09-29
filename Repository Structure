@@ -1,0 +1,22 @@
+src/
+  app/
+    api/
+    liquidity/
+    federation/
+    simulation/
+    exchange/
+    continuity/
+    atlas2/
+    ritual/
+    identity/
+  command/
+  liquidity/
+  federation/
+  identity/
+  simulation/
+  exchange/
+  continuity/
+  atlas2/
+  ritual/
+  lib/
+  styles/
