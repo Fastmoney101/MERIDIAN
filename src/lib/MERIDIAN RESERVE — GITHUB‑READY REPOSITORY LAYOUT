@@ -1,0 +1,284 @@
+meridian-reserve/
+│
+├── README.md
+├── package.json
+├── tsconfig.json
+├── next.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── .env.example
+├── .gitignore
+│
+├── public/
+│   ├── favicon.ico
+│   ├── icons/
+│   └── assets/
+│
+├── styles/
+│   └── globals.css
+│
+└── src/
+    ├── app/
+    │   ├── page.tsx
+    │   ├── layout.tsx
+    │   │
+    │   ├── api/
+    │   │   ├── command/
+    │   │   │   ├── feed/route.ts
+    │   │   │   └── action/route.ts
+    │   │   │
+    │   │   ├── liquidity/
+    │   │   │   ├── createFuture/route.ts
+    │   │   │   ├── settleFuture/route.ts
+    │   │   │   ├── getMarketDepth/route.ts
+    │   │   │   └── getFutures/route.ts
+    │   │   │
+    │   │   ├── federation/
+    │   │   │   ├── connectPlatform/route.ts
+    │   │   │   └── getFederationStatus/route.ts
+    │   │   │
+    │   │   ├── identity/
+    │   │   │   ├── passport/route.ts
+    │   │   │   ├── sigil/route.ts
+    │   │   │   ├── crest/route.ts
+    │   │   │   ├── seal/route.ts
+    │   │   │   └── insignia/route.ts
+    │   │   │
+    │   │   ├── simulation/
+    │   │   │   ├── run/route.ts
+    │   │   │   └── getSimulation/route.ts
+    │   │   │
+    │   │   ├── exchange/
+    │   │   │   ├── placeOrder/route.ts
+    │   │   │   ├── getOrderBook/route.ts
+    │   │   │   ├── getTrades/route.ts
+    │   │   │   └── settleTrade/route.ts
+    │   │   │
+    │   │   ├── continuity/
+    │   │   │   ├── status/route.ts
+    │   │   │   └── heal/route.ts
+    │   │   │
+    │   │   ├── atlas2/
+    │   │   │   ├── decision/route.ts
+    │   │   │   └── status/route.ts
+    │   │   │
+    │   │   └── ritual/
+    │   │       └── events/route.ts
+    │   │
+    │   ├── liquidity/page.tsx
+    │   ├── federation/page.tsx
+    │   ├── simulation/page.tsx
+    │   ├── exchange/page.tsx
+    │   ├── continuity/page.tsx
+    │   ├── atlas2/page.tsx
+    │   ├── ritual/page.tsx
+    │   └── identity/page.tsx
+    │
+    ├── lib/
+    │   ├── db.ts
+    │   ├── buyers.ts
+    │   ├── brokers.ts
+    │   ├── vessels.ts
+    │   ├── regions.ts
+    │   ├── operators.ts
+    │   ├── liquidity.ts
+    │   ├── exchange.ts
+    │   ├── continuity.ts
+    │   └── atlas.ts
+    │
+    ├── command/
+    │   ├── engine/
+    │   │   ├── stream.ts
+    │   │   ├── actions.ts
+    │   │   └── overrides.ts
+    │   ├── api/
+    │   │   ├── getCommandFeed.ts
+    │   │   └── executeAction.ts
+    │   └── components/
+    │       ├── CommandCenter.tsx
+    │       └── CommandPanel.tsx
+    │
+    ├── liquidity/
+    │   ├── schema/
+    │   │   ├── future.ts
+    │   │   └── marketDepth.ts
+    │   ├── engine/
+    │   │   ├── createFuture.ts
+    │   │   ├── settleFuture.ts
+    │   │   ├── getMarketDepth.ts
+    │   │   └── getFutures.ts
+    │   ├── api/
+    │   │   ├── createFuture.ts
+    │   │   ├── settleFuture.ts
+    │   │   ├── getMarketDepth.ts
+    │   │   └── getFutures.ts
+    │   └── components/
+    │       ├── LiquidityDashboard.tsx
+    │       ├── MarketDepthCard.tsx
+    │       └── FuturesList.tsx
+    │
+    ├── federation/
+    │   ├── schema/
+    │   │   ├── platform.ts
+    │   │   └── federationStatus.ts
+    │   ├── engine/
+    │   │   ├── connectPlatform.ts
+    │   │   └── getFederationStatus.ts
+    │   ├── api/
+    │   │   ├── connectPlatform.ts
+    │   │   └── getFederationStatus.ts
+    │   └── components/
+    │       ├── FederationDashboard.tsx
+    │       └── PlatformCard.tsx
+    │
+    ├── identity/
+    │   ├── buyerPassport.ts
+    │   ├── brokerSigil.ts
+    │   ├── operatorCrest.ts
+    │   ├── vesselSeal.ts
+    │   ├── regionInsignia.ts
+    │   ├── engine/
+    │   │   ├── generatePassport.ts
+    │   │   ├── generateSigil.ts
+    │   │   ├── generateCrest.ts
+    │   │   ├── generateSeal.ts
+    │   │   └── generateInsignia.ts
+    │   ├── api/
+    │   │   ├── getPassport.ts
+    │   │   ├── getSigil.ts
+    │   │   ├── getCrest.ts
+    │   │   ├── getSeal.ts
+    │   │   └── getInsignia.ts
+    │   └── components/
+    │       ├── PassportCard.tsx
+    │       ├── SigilCard.tsx
+    │       ├── CrestCard.tsx
+    │       ├── SealCard.tsx
+    │       └── InsigniaCard.tsx
+    │
+    ├── simulation/
+    │   ├── modules/
+    │   │   ├── charterSim.ts
+    │   │   ├── brokerSim.ts
+    │   │   ├── vesselSim.ts
+    │   │   ├── regionSim.ts
+    │   │   ├── marketplaceSim.ts
+    │   │   └── liquiditySim.ts
+    │   ├── engine/
+    │   │   ├── runSimulation.ts
+    │   │   └── aggregateResults.ts
+    │   ├── api/
+    │   │   ├── simulate.ts
+    │   │   └── getSimulation.ts
+    │   └── components/
+    │       ├── SimulationDashboard.tsx
+    │       └── SimulationResultCard.tsx
+    │
+    ├── exchange/
+    │   ├── schema/
+    │   │   ├── order.ts
+    │   │   ├── trade.ts
+    │   │   ├── book.ts
+    │   │   ├── clearing.ts
+    │   │   ├── settlement.ts
+    │   │   ├── marketMaker.ts
+    │   │   ├── riskBuffer.ts
+    │   │   └── ledger.ts
+    │   ├── engine/
+    │   │   ├── orderBook.ts
+    │   │   ├── matchingEngine.ts
+    │   │   ├── clearingHouse.ts
+    │   │   ├── settlementEngine.ts
+    │   │   ├── marketMaker.ts
+    │   │   └── riskBuffer.ts
+    │   ├── api/
+    │   │   ├── placeOrder.ts
+    │   │   ├── getOrderBook.ts
+    │   │   ├── getTrades.ts
+    │   │   └── settleTrade.ts
+    │   └── components/
+    │       ├── ExchangeTerminal.tsx
+    │       ├── OrderBookView.tsx
+    │       ├── TradeTape.tsx
+    │       └── MarketDepthChart.tsx
+    │
+    ├── continuity/
+    │   ├── monitor/
+    │   │   ├── healthCheck.ts
+    │   │   └── metrics.ts
+    │   ├── detector/
+    │   │   ├── failureDetector.ts
+    │   │   └── anomalyDetector.ts
+    │   ├── healing/
+    │   │   ├── restartService.ts
+    │   │   ├── rebuildCache.ts
+    │   │   ├── regenerateState.ts
+    │   │   └── replayEvents.ts
+    │   ├── protocol/
+    │   │   ├── failoverRules.ts
+    │   │   ├── recoveryRules.ts
+    │   │   └── regenerationRules.ts
+    │   ├── ledger/
+    │   │   ├── record.ts
+    │   │   └── retrieve.ts
+    │   ├── api/
+    │   │   ├── getContinuityStatus.ts
+    │   │   └── triggerHealing.ts
+    │   └── components/
+    │       ├── ContinuityDashboard.tsx
+    │       └── ContinuityEventCard.tsx
+    │
+    ├── atlas2/
+    │   ├── perception/
+    │   │   ├── ingest.ts
+    │   │   └── normalize.ts
+    │   ├── cognition/
+    │   │   ├── intent.ts
+    │   │   ├── risk.ts
+    │   │   └── opportunity.ts
+    │   ├── decision/
+    │   │   ├── chooseAction.ts
+    │   │   ├── chooseOptimization.ts
+    │   │   └── chooseGovernance.ts
+    │   ├── action/
+    │   │   ├── executeRouting.ts
+    │   │   ├── executePricing.ts
+    │   │   ├── executeGovernance.ts
+    │   │   └── executeContinuity.ts
+    │   ├── governance/
+    │   │   ├── rules.ts
+    │   │   └── constitution.ts
+    │   ├── memory/
+    │   │   ├── recordDecision.ts
+    │   │   └── recordOutcome.ts
+    │   ├── api/
+    │   │   ├── atlas2Decision.ts
+    │   │   └── atlas2Status.ts
+    │   └── components/
+    │       ├── Atlas2Console.tsx
+    │       └── DecisionCard.tsx
+    │
+    └── ritual/
+        ├── grammar/
+        │   ├── symbolic.ts
+        │   └── temporal.ts
+        ├── identity/
+        │   ├── passportRitual.ts
+        │   ├── sigilRitual.ts
+        │   ├── crestRitual.ts
+        │   ├── sealRitual.ts
+        │   └── insigniaRitual.ts
+        ├── intelligence/
+        │   ├── atlasDecisionRitual.ts
+        │   ├── simulationRitual.ts
+        │   ├── liquidityRitual.ts
+        │   └── exchangeRitual.ts
+        ├── governance/
+        │   ├── complianceRitual.ts
+        │   ├── slaRitual.ts
+        │   ├── riskRitual.ts
+        │   └── continuityRitual.ts
+        └── components/
+            ├── RitualConsole.tsx
+            ├── RitualSequence.tsx
+            └── RitualGlyph.tsx
